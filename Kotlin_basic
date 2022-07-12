@@ -1,0 +1,46 @@
+// === 1. 변수 A와 B를 선언하고, 두 변수의 값을 비교하라. ===
+val A: Int = 11
+val B: Int = 10
+val C: Boolean = if (A == B) true else false      // boolean -> 타입이 같아야 비교 가능
+println(C)
+
+
+
+// === 2. 정수형 변수 AA를 선언하고, 변수 BB는 AA의 두배가 되도록 하라. ===
+val AA: Int = 10
+val BB: Int = AA * 2
+println(BB)
+
+
+
+// === 3. 점수에 따른 학점을 계산하라. ===
+fun checkGrade(score: Int): String {
+    if (score >= 90) return "A학점"
+    else if (score >= 80) return "B학점"
+    else if (score >= 70) return "C학점"
+    else return "F학점"
+}
+
+val result: String = checkGrade(score:90)
+println(result)
+
+
+
+// === 4. 시험에서 맞은 문제의 개수를 작성하면, 시험 점수 반환하도록 하라. ===
+fun gradeTest(correctCount: Int): Int {
+    return correctCount * 5
+}
+
+fun gradeTest2(correctCount: Int): Int = correctCount * 5
+println(gradeTest(correctCount:10))
+println(gradeTest2(correctCount:10))
+
+
+
+// === 5. nullable 정수형 두개를 받는 함수 
+fun plusTwoNumbers(firstNum: Int?, secondNum: Int?): Int {
+    val first: Int = if (firstNum == null) 0 else firstNum
+    val second: Int = if (secondNum == null) 0 else firstNum
+    return first + second
+}
+println(plusTwoNumbers(null, null))
