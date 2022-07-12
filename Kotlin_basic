@@ -37,7 +37,7 @@ println(gradeTest2(correctCount:10))
 
 
 
-// === 5. nullable 정수형 두개를 받는 함수 
+// === 5. nullable 정수형 두개를 받는 함수를 만들고, 인수 합을 반환하도록 하라. ===
 fun plusTwoNumbers(firstNum: Int?, secondNum: Int?): Int {
     val first: Int = if (firstNum == null) 0 else firstNum
     val second: Int = if (secondNum == null) 0 else firstNum
