@@ -55,3 +55,13 @@ val examScore1: Int = 100
 val examScore2: Int = 200
 var examScores = arrayOf<Int>(examScore1, examScore2)
 println(examScores)
+
+
+
+// === 7. collection 예제 ===
+val numbers = listOf < Int(1, 2, 3)
+val number2 = mutableListOf<Int>(1, 2, 3)
+number[0] = 3
+println(numbers)
+numbers = 10
+println(numbers)
