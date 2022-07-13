@@ -41,3 +41,17 @@ fun plustTwoNumbers(firstNum: Int?, secondNum: Int?): Int {
     return first + second
 }
 println(plustTwoNumbers(null, null))
+
+
+
+// === 6. 배열 예제 ===
+var array1 = arrayOf(true, "Hi", 10, 2.2, null)
+println(array1) //자료형 생략했을 경우 복수개의 자료형이 배열의 인자로 올 수 있음. non-null, nullalble
+
+var array2 = arrayOf<Int?>(1, 2, 3, 4, 5, null)
+var array3 = intArrayOf(1, 2, 3, 4, 5)
+
+val examScore1: Int = 100
+val examScore2: Int = 200
+var examScores = arrayOf<Int>(examScore1, examScore2)
+println(examScores)
