@@ -5,10 +5,12 @@ val C: Boolean = if (A == B) true else false
 println(C)
 
 
+
 // === 2. 정수형 변수 AA를 선언하고, 변수 BB는 AA의 두배가 되도록 하라. ===
 val AA: Int = 10
 val BB: Int = AA * 2
 println(BB)
+
 
 
 // === 3. 점수에 따른 학점을 계산하라. ===
@@ -21,6 +23,7 @@ fun checkGrade(score: Int): String {
 
 val result: String = checkGrade(90)
 println(result)
+
 
 
 // === 4. 시험에서 맞은 문제의 개수를 작성하면, 시험 점수 반환하도록 하라. ===
@@ -57,6 +60,7 @@ var examScores = arrayOf<Int>(examScore1, examScore2)
 println(examScores)
 
 
+
 // === 7. 주어진 문자를 N번 반복하여 출력하는 함수 ===
 fun repeatText(repeatText: String, repeatNumber: Int) {
     for (i in 0..repeatNumber) println(repeatText)  //3회
@@ -76,6 +80,7 @@ fun sumUntil(givenNumber: Int): Int {
 sumUntil(10)    //55
 
 
+
 // === 9. 1부터 100까지의 수 중에서 7의 배수의 합을 구하는 함수 ===
 fun sum7s(): Int {
     var sum: Int = 0
@@ -85,6 +90,7 @@ fun sum7s(): Int {
     return sum
 }
 sum7s()         //735
+
 
 
 // === 10. 100보다 작은 숫자를 넣어주면, 1씩 증가시키고 100이 되면 종료되는 함수
