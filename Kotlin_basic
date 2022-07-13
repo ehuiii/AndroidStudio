@@ -57,11 +57,45 @@ var examScores = arrayOf<Int>(examScore1, examScore2)
 println(examScores)
 
 
+// === 7. 주어진 문자를 N번 반복하여 출력하는 함수 ===
+fun repeatText(repeatText: String, repeatNumber: Int) {
+    for (i in 0..repeatNumber) println(repeatText)  //3회
+    for (i in 1..repeatNumber) println(repeatText)  //2회
+    for (i in 0 until repeatNumber) println(repeatText) //2회
+}
+repeatText("안녕", 2)
 
-// === 7. collection 예제 ===
-val numbers = listOf < Int(1, 2, 3)
-val number2 = mutableListOf<Int>(1, 2, 3)
-number[0] = 3
-println(numbers)
-numbers = 10
-println(numbers)
+
+
+// === 8. 1부터 주어진 숫자까지의 합 구하는 함수 ===
+fun sumUntil(givenNumber: Int): Int {
+    var sum: Int = 0
+    for (i in 1..givenNumber) sum += i
+    return sum
+}
+sumUntil(10)    //55
+
+
+// === 9. 1부터 100까지의 수 중에서 7의 배수의 합을 구하는 함수 ===
+fun sum7s(): Int {
+    var sum: Int = 0
+    for (i in 0..100) {
+        if (i % 7 == 0) sum += i
+    }
+    return sum
+}
+sum7s()         //735
+
+
+// === 10. 100보다 작은 숫자를 넣어주면, 1씩 증가시키고 100이 되면 종료되는 함수
+fun increaseOne(numberUnder100: Int) {
+    var givenNumber: Int = numberUnder100
+    while (givenNumber < 100) { //100 이하면 증가시킨 후 up 출력
+        givenNumber++
+        println("up")
+    }
+    return
+}
+increaseOne(99)
+
+
