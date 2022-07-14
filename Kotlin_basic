@@ -105,3 +105,110 @@ fun increaseOne(numberUnder100: Int) {
 increaseOne(99)
 
 
+
+// === 11. 시험 성적 리스트의 동일한 크기의 배열을 만들고, 합격 시 true, 불합격 시 false를 담는 함수 ===
+fun checkPassOrNot(examScores: List<Int>): BooleanArray {
+    val resultArray = BooleanArray(examScores.size, { false })
+    examScores.forEachIndexed { index, score ->
+        if (score >= 80)
+            resultArray[index] = true
+        else
+            resultArray[index] = false
+    }
+    return resultArray
+}
+
+val result = checkPassOrNot(listOf<Int>(70, 71, 72, 77, 78, 79, 80, 82, 90, 99))
+result.forEach {
+    println(it)
+}
+
+
+
+// === 12. 두 개의 주사위를 던졌을 때, 눈의 합이 6이 되는 모든 경우의 수 출력
+fun findSumIsSixFromDice(): List<List<Int>> {
+    val resultList = mutableListOf<List<Int>>()
+    for (i in 1..6) {
+        for (j in 1..6) {
+            if (i + j == 6) resultList.add(listOf<Int>(i, j))
+        }
+    }
+    return resultList
+}
+println(findSumIsSixFromDice())
+
+
+
+// === 13. 배부르기 위해 먹어야하는 총 밥 먹기 횟수, 현재 밥먹은 횟수, 두 개를 받는 함수 ===
+fun eatUntilNotHungry(totalCount: Int, currentCount: Int) {
+    var currentCountCopy: Int = currentCount
+    do {
+        println("밥을 먹었다")
+        currentCountCopy++
+    } while (currentCountCopy < totalCount)
+    println("배가 부르다")
+}
+eatUntilNotHungry(10, 5)
+
+
+// === 14. 병사 그룹 2개와 n번째 값을 넣어주면, 각각의 병사 그룹에서 n번째 병사를 제거하고 2개의 병사 그룹을 합쳐주는 함수 ===
+fun killArmy(
+    firstArmy: List<String>,    //첫번째 병사 그룹
+    secondArmy: List<String>,   //두번째 병사그룹
+    kill: Int                   //제거하는 병사 순서 번째
+): List<List<String>>? {
+    if (firstArmy.size < kill || secondArmy.size < kill) return null    //제거하는 번째가 전체의 수보다는 적어야 함
+
+    val firstArmyTemp = mutableListOf<String>()
+    val secondArmyTemp = mutableListOf<String>()
+
+    for ((index, army) in firstArmy.withIndex()) {
+        if (index != kill) firstArmyTemp.add(army)  //제거하는 번째가 아니면 더하라
+    }
+    for ((index, army) in secondArmy.withIndex()) {
+        if (index != kill) secondArmyTemp.add(army) //제거하는 번째가 아니면 더하라
+    }
+    val result = listOf<List<String>>(firstArmyTemp, secondArmyTemp)    //결과 값
+    return result
+}
+
+println(
+    killArmy(
+        firstArmy = listOf<String>("A", "B", "C", "D", "E"),
+        secondArmy = listOf<String>("A", "B", "C"),
+        kill = 2    //C 없애기
+    )
+)
+
+
+
+// === 15. 단을 입력 받아, 해당 단수의 값을 리스트로 출력하는 함수 ===
+fun gugudan(dan: Int) {
+    val numbers = mutableListOf<Int>()
+    for (i in 1..9) numbers.add(dan * i)
+    println(numbers)
+}
+gugudan(8)
+
+
+// === 16. 숫자 리스트 2개를 넣어주면 짝수 홀수로 분리된 Map을 만드는 함수 ===
+fun splitNumbers(firstIntList: List<Int>, secondIntList: List<Int>): Map<String, List<Int>> {
+    val result = mutableMapOf<String, List<Int>>()
+    val totalIntList = mutableListOf<Int>()
+    totalIntList.addAll(firstIntList)   //리스트 1
+    totalIntList.addAll(secondIntList)  //리스트 2
+
+    val eventNumber = mutableListOf<Int>()  //짝수
+    val oddNumber = mutableListOf<Int>()    //홀수
+
+    totalIntList.forEach { number ->
+        if (number % 2 == 0) eventNumber.add(number)
+        else oddNumber.add(number)
+    }
+    result.put("짝수", eventNumber)
+    result.put("홀수", oddNumber)
+    return result
+}
+println(
+    splitNumbers(listOf<Int>(1, 2, 3, 4, 5), listOf<Int>(6, 7, 8, 9, 10))
+)
