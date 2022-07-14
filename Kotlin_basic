@@ -191,6 +191,7 @@ fun gugudan(dan: Int) {
 gugudan(8)
 
 
+
 // === 16. 숫자 리스트 2개를 넣어주면 짝수 홀수로 분리된 Map을 만드는 함수 ===
 fun splitNumbers(firstIntList: List<Int>, secondIntList: List<Int>): Map<String, List<Int>> {
     val result = mutableMapOf<String, List<Int>>()
